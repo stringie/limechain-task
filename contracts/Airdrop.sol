@@ -1,12 +1,10 @@
-pragma solidity 0.5.8;
+pragma solidity ^0.5.8;
 
 contract Airdrop {
 
     address public owner;
     uint256 public tokenAmount;
     bytes32 private rootHash;
-
-    event Test(bytes32 _hash);
 
     mapping (address => bool) public claimed;
 
@@ -39,8 +37,6 @@ contract Airdrop {
         claimed[msg.sender] = true;
 
         msg.sender.transfer(tokenAmount);
-
-        return tempHash;
     }
 
     function () external payable {}
