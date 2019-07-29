@@ -10,7 +10,6 @@ contract Airdrop {
 
     constructor() public {
         owner = msg.sender;
-        tokenAmount = 20;
     }
 
     function setAmountAndHash(uint256 _amount, bytes32 _hash) public {
